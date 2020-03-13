@@ -1,8 +1,8 @@
 import {useLocalStorage} from './useLocalStorage';
 import {useEffect} from 'react';
 
-export const useDarkMode = () => {
-    const [someValue, setSomeValue] = useLocalStorage('keyForDarkMode');
+export const useDarkMode = ({isDarkModeOn}) => {
+    const [someValue, setSomeValue] = useLocalStorage('keyForDarkMode', isDarkModeOn);
     useEffect(()=>{
         if(someValue){
             const bodyElement = document.body;
